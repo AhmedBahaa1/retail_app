@@ -6,8 +6,6 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        // baseUrl: 'https://newsapi.org/', // news api
-        // baseUrl: 'https://student.valuxapps.com/api/', // shop api
         baseUrl: 'https://285c2dab-65fc-4671-a1c7-94de39a1d8c8.mock.pstmn.io',
         receiveDataWhenStatusError: true,
       ),
@@ -17,13 +15,17 @@ class DioHelper {
   static Future getData({
     @required String? url,
     Map<String, dynamic>? query,
-    String lang = 'en',
-    String? token,
+    // String lang = 'en',
+    String? xApiKey =
+        'PMAK-63e0dc4ab9b96b04d4c01780-e6982a414f5fe6418f69ca228297245821',
+    // String? token,
   }) async {
     dio!.options.headers = {
+      'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'lang': lang,
-      'Authorization': token,
+      'x-api-key': xApiKey,
+      // 'lang': lang,
+      // 'Authorization': token,
     };
 
     return await dio!.get(url!, queryParameters: query);
@@ -58,7 +60,4 @@ class DioHelper {
     };
     return await dio?.put(url!, queryParameters: query, data: data);
   }
-
-
-
 }
