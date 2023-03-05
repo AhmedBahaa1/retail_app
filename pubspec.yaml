@@ -94,6 +94,9 @@ fonts:
       - asset: assets/fonts/Urbanist-Medium.ttf
       - asset: assets/fonts/Urbanist-Regular.ttf
       - asset: assets/fonts/Urbanist-SemiBold.ttf
+  - family: IconBroken
+    fonts:
+      - asset: assets/fonts/icons.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
