@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_app/layout/retail_app/cubit/cubit.dart';
 import 'package:retail_app/layout/retail_app/cubit/states.dart';
+import 'package:retail_app/shared/components/constants.dart';
+import 'package:retail_app/shared/style/icon_broken.dart';
 
 class RetailAppLayout extends StatelessWidget {
   const RetailAppLayout({super.key});
@@ -14,7 +16,39 @@ class RetailAppLayout extends StatelessWidget {
         var cubit = RetailCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            title: Text('home'),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Deliver to',
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption
+                      ?.copyWith(fontSize: 14),
+                ),
+                Text('Home'),
+              ],
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: CircleAvatar(
+                      radius: 18,
+                      backgroundColor: Colors.grey[200],
+                      child: CircleAvatar(
+                        radius: 14,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          Icons.favorite_border_rounded,
+                          color: Colors.red,
+                          size: 16,
+                        ),
+                      ),
+                    )),
+              )
+            ],
           ),
           body: cubit.bottomScreen[cubit.currentIndex],
           bottomNavigationBar: Container(
