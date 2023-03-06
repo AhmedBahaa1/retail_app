@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retail_app/layout/retail_app/cubit/states.dart';
 import 'package:retail_app/models/home_model.dart';
+import 'package:retail_app/models/retail_app/splash_model.dart';
 import 'package:retail_app/widgets/retail_app/cart/cart_screen.dart';
 import 'package:retail_app/widgets/retail_app/home/home_screen.dart';
 import 'package:retail_app/widgets/retail_app/orders/orders_screen.dart';
@@ -28,6 +29,9 @@ class RetailCubit extends Cubit<RetailHomeStates> {
     currentIndex = index;
     emit(RetailChangeBottomNavState());
   }
+
+  SplashModel? splashModel;
+  
 
   HomeModel? homeModel;
 }

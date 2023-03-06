@@ -15,7 +15,6 @@ class DioHelper {
   static Future getData({
     @required String? url,
     Map<String, dynamic>? query,
-    // String lang = 'en',
     String? xApiKey =
         'PMAK-63e0dc4ab9b96b04d4c01780-e6982a414f5fe6418f69ca228297245821',
     // String? token,

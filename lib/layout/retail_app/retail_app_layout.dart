@@ -21,7 +21,7 @@ class RetailAppLayout extends StatelessWidget {
             padding: EdgeInsets.all(20),
             height: 100,
             child: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
+                // type: BottomNavigationBarType.fixed,
                 elevation: 0,
                 onTap: (index) {
                   cubit.changeBottom(index);

@@ -3,7 +3,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 import '../network/network/cashe_helper.dart';
 
-Color defaultColor = HexColor('#1BAC4B');
+ Color defaultColor = HexColor('972929');
 
 // void SignOut(context) {
 //   CasheHelper.removeData(key: 'token').then((value) {
